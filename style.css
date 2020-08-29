@@ -478,7 +478,7 @@ tr > :first-child
 
 /* Top Section */
 .top img {
-    width: 180px;
+    width: 170px;
 }
 
 @media(max-width: 960px)
