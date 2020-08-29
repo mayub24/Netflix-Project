@@ -1,0 +1,690 @@
+/* Colours that will be used throughout the project */
+:root {
+    --primary--color: hsl(357, 92%, 47%);
+    --dark--color: #222222;
+}
+
+
+* {
+    /* border-box tells the browser to account for any border and padding in the values you specify for an element's width and height */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: black;
+    color: white;
+}
+
+
+h1, h2, h3, h4 {
+    color: white;
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+p {
+    /* 1rem = 16px and 0.5rem = 8px */
+    margin: 0.5rem 0;
+}
+
+img {
+    width: 100%;
+}
+
+.showcase-head {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url('img/back.jpg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+}
+
+/* Adding a shadow through pesudo eleemnts(before/after) */
+
+.showcase-head::after {
+    content: '';
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /*  Bottom RGBA specifies the color which is rgb + it also specifies the opacity which is the 4th style */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Learn inset */
+    /* inset takes 2 values after it, (x-shadow from left), (y-shadow from top), (blurriness of the black color), (finally the color) */
+    box-shadow: inset 20px 30px 300px black, inset -20px 30px 200px black;
+}
+
+.top {
+    /* Relative means it will stay in same position but we can move it around using top, left, bottom and right */
+    /* Even if a relative object gets moved around, the empty spot will stay there because its relative */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    z-index: 2;
+}
+
+.top > *
+{
+    padding: 2em;
+}
+
+a
+{
+    background-color: var(--primary--color);
+    padding: 8px 17px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+}
+
+.top a {
+    background-color: var(--primary--color);
+    padding: 6px 14px;
+    border-radius: 5px;
+    border: none;
+}
+
+.content {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    margin-top: 10em;
+    font-size: 20px;
+    z-index: 2;
+}
+
+.content h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    width: 50%;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content p {
+ font-size: 1.2em;  
+ margin: 1em 0em; 
+}
+
+/* LARGE BUTTON */
+.btn-xl {
+    display: inline-block;
+    background-color: var(--primary--color);
+    color:white;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    /* padding: 18px 40px; */
+    border-radius: 1px;
+}
+
+.btn-xl:hover {
+    opacity: 0.95;
+    transition: all ease-in-out;
+}
+
+/* SECTION EDITING */
+
+section#card {
+    background-color: var(--dark--color);
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    overflow: hidden;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#item-1
+{
+    /* margin-top: 200px; */
+}
+
+.card-content{
+    flex-basis: 30%;
+    margin: 20px 0px 20px 0px;
+}
+
+#card {
+    border-bottom: 2px solid gray;
+}
+
+/* Icons + Paragraphs*/
+
+.card-content p
+{
+    color: gray;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+.container>div i 
+{
+    color: gray;
+    font-size: 50px;
+}
+
+.container>div.card-content i:hover
+{
+    color: white;
+}
+
+.card-current
+{
+    border-bottom: var(--primary--color) 4px solid;
+}
+
+div.card-current i, div.card-current p
+{
+    color: white;
+}
+
+.container>div 
+{
+    padding: 20px 0px;
+
+}
+
+/* Changing colour of multiple items when one item is hovered over */
+
+#card > div:hover 
+{
+    cursor: pointer;
+    color: white;
+}
+
+/* Commitment area */
+section#item-1-content
+{
+    width: 75%;
+    margin: 50px auto;
+}
+
+
+section#item-1-content a
+{
+    font-size: 15px;
+    border-radius: 2px;
+    margin-top: 15px;
+    padding: 17px 20px;
+}
+
+
+div.parent
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+div.parent p
+{
+    font-size: 35px;
+}
+
+div.hold
+{
+    margin-top: 50px;
+}
+
+/* WATCH ANYWHERE */
+
+.main
+{
+    display: flex;
+    width: 75%;
+    margin: -5em auto -1em auto;
+    align-items: center;
+    justify-items: center;
+}
+
+hr
+{
+    background-color: gray;
+    opacity: 0.5;
+    height: 8px;
+    border: none;
+    margin-top: 8em;
+}
+
+@media(max-width: 868px)
+{
+    .main
+    {
+        margin: -5em auto -8em auto;
+    }
+}
+
+.pic
+{
+    width: 30%;
+    padding: 0px 20px;
+    margin-left: 20px;
+    margin-top: 100px;
+}
+
+.pic > p
+{
+    color: gray;
+    text-align: center;
+}
+
+.pic > h4
+{
+    text-align: center;
+}
+
+/* ANYTIME, TOP OF 2ND */
+.anytime
+{
+    display: grid;
+    width: 65%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    align-items: center;
+    align-content: center;
+    margin: 50px auto;
+    transform: translate(5%);
+}
+
+.anytime p
+{
+    font-size: 30px;
+}
+
+.anytime a
+{
+    background-color: var(--primary--color);
+    border-radius: 2px;
+    display: inline-block;
+    border: none;
+    padding: 20px;
+    width: 60%;
+    text-align: center;
+    margin-left: 90px;
+}
+
+
+/* Check WHAT HAPPENS WHEN YOU CLICK WATCH ANYWHERE AND DISPLAY BLOCK */
+
+
+/* Footer */
+.foot-list
+{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: gray;
+    line-height: 2.1em;
+}
+
+.foot-area
+{
+    width: 80%;
+    margin: 60px auto 50px auto;
+}
+
+.foot-list>li:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+ul.foot-list
+{
+    margin: 0px 69px;
+}
+
+.foot-top
+{
+    list-style-type: none;
+    margin: 0px 0px 24px 70px;
+    color: gray;
+}
+
+#foot
+{
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+/* Number */
+span#numb:hover
+{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Table [Price] */
+.price
+{
+    display: grid;
+    width: 60%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    align-items: center;
+    align-content: center;
+    margin: 50px auto;
+    transform: translate(5%);
+}
+
+.price p
+{
+    font-size: 21px;
+    margin-left: 3px;
+}
+
+.price a
+{
+    background-color: var(--primary--color);
+    border-radius: 2px;
+    display: inline-block;
+    border: none;
+    padding: 15px;
+    width: 60%;
+    text-align: center;
+    margin-left: 10px;
+}
+
+/* Table */
+table
+{
+    margin: 0em auto 0em auto;
+    border: none;
+    width: 70%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+thead th
+{
+    font-weight: 600;
+    font-size: 16px;
+    padding-bottom: 16px;
+}
+
+th
+{
+    padding: 0px 20px;
+}
+
+tr:nth-child(even)
+{
+    background-color: var(--dark--color);
+}
+
+th
+{
+    border: none;
+    background-color: black;
+}
+
+td
+{
+    padding: 7px 5px;
+    color: gray;
+}
+
+tr
+{
+    text-align: center;
+}
+
+tr > :first-child
+{
+    text-align: left;
+    padding: 10px 10px 10px 18px;
+}
+
+/* None display */
+.tab-content, 
+.tab-content
+{
+    display: none;
+    margin-top: 6em;
+}
+
+
+
+.show
+{
+    display: block;
+}
+
+/* Top Section */
+.top img {
+    width: 180px;
+}
+
+@media(max-width: 960px)
+{
+    /* Commit Section */
+    div.parent
+    {
+        display: block;
+        margin-bottom: -4em;
+    }
+    
+    .hold
+    {
+        text-align: center;
+    }
+    
+    .hold a
+    {
+        margin-bottom: 10px;
+    }
+    
+    #par
+    {
+        font-size: 24px;
+    }
+    
+
+    /* Watch Anywhere Section */
+    
+    .anytime
+    {
+        display: block;
+        padding: 0px 0px 40px 0px;
+        text-align: center;
+    }
+    
+    .anytime p
+    {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .anytime a
+    {
+        margin: 20px 0px 0px 0px;
+        padding: 13px 5px;
+        width: 80%;
+    }
+    
+    .main
+    {
+        display: block;
+    }
+    
+    .pic
+    {
+        width: 100%;
+        margin-bottom: -30px;
+    }
+    
+    .pic:last-child
+    {
+        margin-bottom: 210px;
+    }
+    
+    
+    /* Price Section */
+    .price
+    {
+        display: block;
+    }
+    
+    .price a
+    {
+        width: 80%;
+        padding: 10px;
+        margin: 15px 0px 0px 25px;
+    }
+    
+
+    /* Bottom Information Section [Footer]*/
+    .foot-list
+    {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        color: gray;
+        line-height: 2.1em;
+    }
+
+    .foot-area
+    {
+        font-size: 13px;
+        width: 100%;
+        margin: 60px auto 50px auto;
+    }
+
+ul.foot-list
+{
+    margin: 0px 20px;
+}
+
+
+.foot-top
+{
+    margin: 0px 0px 24px 20px;
+}
+
+
+.content > h1
+    {
+        font-size: 2em;
+        width: 80%;
+    }
+
+.content
+{
+    margin-top: 350px;
+}
+
+}
+
+@media(max-width: 777px)
+{
+    .content
+    {
+        margin-top: 340px;
+    }
+    
+    .showcase-head::after
+    {
+        box-shadow: inset 0px -300px 50px black, inset 0px 50px 200px black;
+    }
+
+    .showcase-head
+    {
+        filter: brightness(200%);
+
+    }
+    
+    .content > h1
+    {
+        font-size: 2em;
+        width: 80%;
+    }
+
+    .content > p
+    {
+        font-size: 25px;
+    }
+    
+    .content > a
+    {
+        font-size: 27px;
+    }
+
+    .top img
+    {
+        width: 120px;
+    }
+    
+    table
+    {
+        margin: 0em auto -4em auto;
+    }
+}
+
+
+
+@media(max-width: 550px)
+{
+    
+    .content
+    {
+        line-height: 3em;
+        margin-top: 320px;
+    }
+    
+    .content > h1
+    {
+        font-size: 37px;
+        width: 80%;
+    }
+    
+    .content > p
+    {
+        font-size: 20px;
+    }
+    
+    .content > a
+    {
+        font-size: 1em;
+        border-radius: 3px;
+        margin-top: -40px;
+    }
+    
+
+    .tab-content, 
+    .tab-content
+    {
+        margin-top: 3em;
+    }
+}
+
+
+ .content > a
+    {
+        border-radius: 3px;
+    }
