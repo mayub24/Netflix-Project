@@ -1,6 +1,8 @@
 # Netflix Styled Webpage
 This repository contains a prototype of the Netflix Website. 
 
+##### Hosted on: https://sad-goldstine-416704.netlify.app/
+
 ### Learning Outcomes
 - [x] Flexbox
 - [x] CSS Grids
